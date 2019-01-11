@@ -1,3 +1,9 @@
+
+Вы можете запустить приложение по следующей ссылке: https://nau077.github.io/React_site_with_react_router_and_todo/
+
+Использован механизм React-Router
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
