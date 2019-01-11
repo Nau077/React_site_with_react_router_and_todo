@@ -1,15 +1,225 @@
-.App {
-  text-align: center;
+/*#PARAGRAPH
+==================*/
+/*#LINKS
+==================*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v3.0 | 20180413
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*#my reset
+=====================-*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  /* Нужно для мобильного WebKit */
+  /* Нужно для Firefox */
+  box-sizing: border-box;
+}
+
+/*#link
+=====================-*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*#image
+=====================-*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*#input
+=====================-*/
+input,
+textarea,
+button,
+.button,
+.btn {
+  font-family: inherit;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.btn {
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+.button:focus,
+.btn:focus {
+  outline: none;
+}
+
+/*#table
+=====================-*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+.container{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.container img{
+  width: 500px;
+  height: 500px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #8f8f8f;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,15 +228,89 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header_2 {
+  background-color: #b8aeae;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.none {
+  display: none;
+}
+
+body {
+  background: rgba(0, 102, 255, 0.38);
+  font-family: sans-serif;
+}
+
+p {
+  margin: 0 0 5px;
+}
+
+.article {
+  background: #fff;
+  border: 1px solid rgba(0, 89, 181, 0.82);
+  width: 600px;
+  margin: 0 0 5px;
+  box-shadow: 2px 2px 5px -1px rgb(0, 81, 202);
+  padding: 3px 5px;
+}
+
+.news__author {
+  text-decoration: underline;
+  color: #007ddc;
+}
+.news__count {
+  margin: 10px 0 0 0;
+  display: block;
+}
+.test-input {
+  margin: 0 5px 5px 0;
+}
+
+.add {
+  margin: 5px 0 5px 0;
+  margin-top: 5px;
+  width: 210px;
+  border: 1px dashed rgba(0, 89, 181, 0.82);
+  padding: 5px;
+  margin: auto;
+}
+.add__author,
+.add__text,
+.add__btn,
+.add__checkrule {
+  display: block;
+  margin: 0 0 5px 0;
+  padding: 5px;
+  width: 94%;
+  border: 1px solid rgba(0, 89, 181, 0.82);
+}
+.add__checkrule {
+  border: none;
+  font-size: 12px;
+}
+.add__btn {
+  box-sizing: content-box;
+  color: #fff;
+  text-transform: uppercase;
+  background: #007ddc;
+}
+.add__btn:disabled {
+  background: #ccc;
+  color: #999;
+}
+
+.NavDiv{
+  
+  max-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+
 }
