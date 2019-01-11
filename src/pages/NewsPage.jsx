@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form } from '../components/Form/Forms'
 import { News } from '../components/News/MainNews'
+ 
 import '../App.css'
 
 
@@ -10,41 +11,18 @@ class NewsPage extends React.Component {
     isLoading: false,
   }
 
-  static getDerivedStateFromProps(props, state) {
-    let nextFilteredNews
-
-    // смотрим в state.news (ранее смотрели в props)
-    // и проверяем, чтобы не клоинировать null
-    // например, в момент первой отрисовки
-    if (Array.isArray(state.news)) {
-      nextFilteredNews = [...state.news]
-
-      nextFilteredNews.forEach((item, index) => {
-        if (item.bigText.toLowerCase().indexOf('pubg') !== -1) {
-          item.bigText = 'СПАМ'
-        }
+  componentDidMount() {
+    this.setState({ isLoading: true })
+    fetch('https://nau077.github.io/React_site_with_react_router_and_todo/data/newsData.json')
+      .then(response => {
+        return response.json()
       })
-
-      return {
-        filteredNews: nextFilteredNews,
-      }
-    }
-
-    return null
+      .then(data => {
+        setTimeout(() => { // добавили задержку
+          this.setState({ isLoading: false, news: data })
+        }, 3000) // в три секунды
+      })
   }
-
-  // componentDidMount() {
-  //   this.setState({ isLoading: true })
-  //   fetch('http://localhost:3000/data/newsData.json')
-  //     .then(response => {
-  //       return response.json()
-  //     })
-  //     .then(data => {
-  //       setTimeout(() => { // добавили задержку
-  //         this.setState({ isLoading: false, news: data })
-  //       }, 3000) // в три секунды
-  //     })
-  // }
 
  
   handleAddNews = data => {
