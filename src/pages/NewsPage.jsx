@@ -2,7 +2,6 @@ import React from 'react'
 import { Form } from '../components/Form/Forms'
 import { News } from '../components/News/MainNews'
 import '../App.css'
-import newsData from '../../public/data/newsData.json'
 
 
 class NewsPage extends React.Component {
@@ -34,21 +33,18 @@ class NewsPage extends React.Component {
     return null
   }
 
-
-
-  componentDidMount() {
-    const {newData} = newsData
-    this.setState({ isLoading: true })
-    fetch({newData})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setTimeout(() => { // добавили задержку
-          this.setState({ isLoading: false, news: data })
-        }, 3000) // в три секунды
-      })
-  }
+  // componentDidMount() {
+  //   this.setState({ isLoading: true })
+  //   fetch('http://localhost:3000/data/newsData.json')
+  //     .then(response => {
+  //       return response.json()
+  //     })
+  //     .then(data => {
+  //       setTimeout(() => { // добавили задержку
+  //         this.setState({ isLoading: false, news: data })
+  //       }, 3000) // в три секунды
+  //     })
+  // }
 
  
   handleAddNews = data => {
